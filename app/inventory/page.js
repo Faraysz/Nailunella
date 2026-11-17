@@ -236,7 +236,7 @@ export default function InventoryPage() {
                   <th>Price</th>
                   <th>Duration</th>
                   <th>Clients</th>
-                  <th>Action</th>
+                  <th className="text-center" style={{ minWidth: '150px' }}>Aksi</th>
                 </tr>
               </thead>
               <tbody>
@@ -266,26 +266,32 @@ export default function InventoryPage() {
                     </td>
                     <td>{item.duration_minutes || 60} mins</td>
                     <td>{item.clients || item.stock || 100}</td>
-                    <td>
-                      {/* Action Edit Button */}
-                      <button 
-                        onClick={() => handleOpenEdit(item)}
-                        className="btn btn-link p-0 text-secondary border-0 me-2"
-                        title="Edit Layanan"
-                        type="button"
-                      >
-                        <i className="ti ti-edit fs-5"></i>
-                      </button>
+                    <td className="text-center">
+                      <div className="d-flex justify-content-center align-items-center gap-2">
+                        {/* Action Edit Button */}
+                        <button 
+                          onClick={() => handleOpenEdit(item)}
+                          className="btn btn-sm btn-outline-primary d-inline-flex align-items-center px-2 py-1 shadow-none"
+                          style={{ fontSize: '0.8rem', borderRadius: '6px' }}
+                          title="Edit Layanan"
+                          type="button"
+                        >
+                          <i className="ti ti-edit me-1"></i>
+                          <span>Edit</span>
+                        </button>
 
-                      {/* Action Delete Button */}
-                      <button 
-                        onClick={() => setDeletingItem(item)}
-                        className="btn btn-link p-0 link-danger border-0"
-                        title="Hapus Layanan"
-                        type="button"
-                      >
-                        <i className="ti ti-trash fs-5"></i>
-                      </button>
+                        {/* Action Delete Button */}
+                        <button 
+                          onClick={() => setDeletingItem(item)}
+                          className="btn btn-sm btn-outline-danger d-inline-flex align-items-center px-2 py-1 shadow-none"
+                          style={{ fontSize: '0.8rem', borderRadius: '6px' }}
+                          title="Hapus Layanan"
+                          type="button"
+                        >
+                          <i className="ti ti-trash me-1"></i>
+                          <span>Hapus</span>
+                        </button>
+                      </div>
                     </td>
                   </tr>
                 ))}

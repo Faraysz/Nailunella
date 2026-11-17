@@ -5,7 +5,7 @@ export const metadata = {
   description: 'Beauty Nails Studio Management System',
   icons: {
     icon: '/assets/images/logo-nails.png',
-    apple: '/assets/images/favicon_io/apple-touch-icon.png',
+    apple: '/assets/images/logo-nails.png',
   },
 };
 
@@ -21,7 +21,10 @@ export default function RootLayout({ children }) {
           href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" 
           rel="stylesheet" 
         />
-        {/* Global Font Poppins & Anti Image Overflow */}
+        {/* CSS Statis Bootstrap Template Langsung Siap */}
+        <link rel="stylesheet" href="/assets/css/style.css" />
+
+        {/* Global Shimmer Skeleton Kotak-Kotak & Anti FOUC */}
         <style dangerouslySetInnerHTML={{
           __html: `
             html, body, button, input, select, textarea, h1, h2, h3, h4, h5, h6, p, span, a, table, tr, td, th {
@@ -34,6 +37,17 @@ export default function RootLayout({ children }) {
             .avatar-md { width: 2.5rem !important; height: 2.5rem !important; }
             .avatar-lg { width: 3.5rem !important; height: 3.5rem !important; }
             .topbar img.avatar { width: 32px !important; height: 32px !important; }
+
+            /* Skeleton Shimmer Box Kotak-Kotak */
+            .skeleton-box {
+              background: linear-gradient(90deg, #f0f0f2 25%, #e4e4e8 50%, #f0f0f2 75%);
+              background-size: 200% 100%;
+              animation: skeleton-shimmer 1.4s infinite cubic-bezier(0.4, 0, 0.6, 1);
+            }
+            @keyframes skeleton-shimmer {
+              0% { background-position: 200% 0; }
+              100% { background-position: -200% 0; }
+            }
           `
         }} />
       </head>

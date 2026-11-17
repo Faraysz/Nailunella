@@ -53,9 +53,7 @@ export default function SignInPage() {
                 loading="lazy"
                 style={{ width: '36px', height: '36px' }}
               />
-              <span className="ms-2 fs-5 fw-bold text-dark" style={{ fontFamily: 'Poppins, sans-serif' }}>
-                BEAUTY NAILS
-              </span>
+              
             </Link>
             <h1 className="card-title mb-4 h5 fw-bold text-dark">Sign in to your account</h1>
           </div>

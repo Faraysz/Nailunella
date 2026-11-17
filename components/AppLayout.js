@@ -1,29 +1,45 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Topbar from '@/components/Topbar';
 import Sidebar from '@/components/Sidebar';
-import Preloader from '@/components/Preloader';
+import DashboardSkeleton from '@/components/DashboardSkeleton';
 
 export default function AppLayout({ children }) {
+  const [showSkeleton, setShowSkeleton] = useState(true);
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [isMobileShow, setIsMobileShow] = useState(false);
 
-  const toggleDesktop = () => {
-    setIsCollapsed(!isCollapsed);
-  };
+  useEffect(() => {
+    // Selesai loading skeleton dalam 250ms secara otomatis & pasti
+    const timer = setTimeout(() => {
+      setShowSkeleton(false);
+    }, 250);
 
-  const toggleMobile = () => {
-    setIsMobileShow(!isMobileShow);
-  };
+    return () => clearTimeout(timer);
+  }, []);
 
-  const closeMobile = () => {
-    setIsMobileShow(false);
-  };
+  const toggleDesktop = () => setIsCollapsed(!isCollapsed);
+  const toggleMobile = () => setIsMobileShow(!isMobileShow);
+  const closeMobile = () => setIsMobileShow(false);
 
   return (
     <>
-      <Preloader />
+      {/* Skeleton Shimmer Overlay (Hanya muncul 250ms saat initial load) */}
+      {showSkeleton && (
+        <div 
+          className="position-fixed top-0 start-0 w-100 h-100 bg-white"
+          style={{ 
+            zIndex: 99999, 
+            overflow: 'hidden',
+            pointerEvents: 'none',
+            transition: 'opacity 0.2s ease-out'
+          }}
+        >
+          <DashboardSkeleton />
+        </div>
+      )}
+
       {/* Overlay untuk mobile sidebar */}
       <div 
         id="overlay" 

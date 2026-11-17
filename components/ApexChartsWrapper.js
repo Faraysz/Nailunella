@@ -1,10 +1,17 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
 
 const Chart = dynamic(() => import('react-apexcharts'), { ssr: false });
 
 export function SalesPurchaseChart() {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   const options = {
     series: [
       {
@@ -91,6 +98,10 @@ export function SalesPurchaseChart() {
     },
   };
 
+  if (!mounted) {
+    return <div className="skeleton-box rounded w-100" style={{ height: '350px' }}></div>;
+  }
+
   return (
     <div style={{ minHeight: '350px' }}>
       <Chart
@@ -105,6 +116,12 @@ export function SalesPurchaseChart() {
 }
 
 export function CustomerRadialChart() {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   const options = {
     series: [75, 55],
     chart: {
@@ -136,6 +153,10 @@ export function CustomerRadialChart() {
     },
     labels: ['First Time', 'Return'],
   };
+
+  if (!mounted) {
+    return <div className="skeleton-box rounded-circle mx-auto my-3" style={{ width: '160px', height: '160px' }}></div>;
+  }
 
   return (
     <div style={{ minHeight: '180px' }}>

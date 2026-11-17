@@ -73,8 +73,8 @@ export default function Topbar({ onToggleDesktop, onToggleMobile }) {
                   <li className="p-3 border-bottom">
                     <div className="d-flex gap-3">
                       <img 
-                        src="/assets/images/avatar/avatar-1.jpg" 
-                        alt="" 
+                        src="/assets/images/avatar-staff1.jpg" 
+                        alt="Staff 1" 
                         loading="lazy"
                         width="32"
                         height="32"
@@ -90,8 +90,8 @@ export default function Topbar({ onToggleDesktop, onToggleMobile }) {
                   <li className="p-3 border-bottom">
                     <div className="d-flex gap-3">
                       <img 
-                        src="/assets/images/avatar/avatar-4.jpg" 
-                        alt="" 
+                        src="/assets/images/avatar-staff2.jpg" 
+                        alt="Staff 2" 
                         loading="lazy"
                         width="32"
                         height="32"
@@ -107,8 +107,8 @@ export default function Topbar({ onToggleDesktop, onToggleMobile }) {
                   <li className="p-3 border-bottom">
                     <div className="d-flex gap-3">
                       <img 
-                        src="/assets/images/avatar/avatar-2.jpg" 
-                        alt="" 
+                        src="/assets/images/avatar-admin.jpg" 
+                        alt="Customer" 
                         loading="lazy"
                         width="32"
                         height="32"
@@ -142,12 +142,12 @@ export default function Topbar({ onToggleDesktop, onToggleMobile }) {
               type="button"
             >
               <img 
-                src="/assets/images/avatar/avatar-1.jpg" 
+                src="/assets/images/avatar-admin.jpg" 
                 alt="User Avatar" 
                 loading="lazy"
-                width="32"
-                height="32"
-                className="avatar avatar-sm rounded-circle" 
+                width="34"
+                height="34"
+                className="avatar avatar-sm rounded-circle object-fit-cover shadow-xs border" 
               />
             </button>
 
@@ -159,12 +159,12 @@ export default function Topbar({ onToggleDesktop, onToggleMobile }) {
                 <div>
                   <div className="d-flex gap-3 align-items-center border-dashed border-bottom px-3 py-3">
                     <img 
-                      src="/assets/images/avatar/avatar-1.jpg" 
+                      src="/assets/images/avatar-admin.jpg" 
                       alt="" 
                       loading="lazy"
                       width="40"
                       height="40"
-                      className="avatar avatar-md rounded-circle" 
+                      className="avatar avatar-md rounded-circle object-fit-cover shadow-xs border" 
                     />
                     <div>
                       <h4 className="mb-0 small fw-bold">Zulfa Ulya</h4>

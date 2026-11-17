@@ -11,22 +11,21 @@ export default function Sidebar({ isCollapsed, isMobileShow }) {
       id="sidebar" 
       className={`sidebar ${isCollapsed ? 'collapsed' : ''} ${isMobileShow ? 'mobile-show' : ''}`}
     >
-      <div className="logo-area d-flex align-items-center">
-        <Link href="/" className="d-inline-flex align-items-center text-decoration-none text-dark">
+      <div className="logo-area d-flex align-items-center px-3">
+        <Link href="/" className="d-inline-flex align-items-center text-decoration-none">
           <img 
             src="/assets/images/logo-nails.png" 
-            alt="Beauty Nails Logo" 
+            alt="Logo" 
             loading="lazy"
-            width="32"
-            height="32"
-            style={{ width: '32px', height: '32px', objectFit: 'contain', flexShrink: 0 }}
+            height="46"
+            style={{ 
+              height: '46px', 
+              width: 'auto', 
+              maxHeight: '48px', 
+              objectFit: 'contain', 
+              display: 'inline-block'
+            }} 
           />
-          <span 
-            className="logo-text ms-2 fw-bold text-dark fs-6" 
-            style={{ fontFamily: 'Poppins, sans-serif', letterSpacing: '0.5px' }}
-          >
-            BEAUTY NAILS
-          </span>
         </Link>
       </div>
 
